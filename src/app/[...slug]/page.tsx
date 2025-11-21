@@ -20,7 +20,8 @@ const Page = () => {
 	const [curPage, setCurPage] = useState('');
 
 	useEffect(() => {
-		const pageKey = COMPANY_PAGE_MAPPINGS[slug as keyof typeof COMPANY_PAGE_MAPPINGS];
+		const pageKey =
+			COMPANY_PAGE_MAPPINGS[slug as keyof typeof COMPANY_PAGE_MAPPINGS];
 		if (pageKey) {
 			setCurPage(pageKey);
 		}
@@ -28,15 +29,17 @@ const Page = () => {
 	}, [slug]);
 
 	return (
-		<div className='flex flex-col items-center justify-center'>
+		<main className='flex flex-col min-h-screen bg-background selection:bg-primary/20'>
 			<Nav />
-			{curPage === 'reachinbox' && <Reachinbox icon='🚀' banner={banner} />}
-			{curPage === 'openinapp' && <Openinapp icon='🏋🏻‍♂️' banner={oiaBanner} />}
-			{curPage === 'jarviot' && <Jarviot icon='🎨' banner={banner} />}
-			{curPage === 'caresy' && <Caresy icon='🧐' banner={banner} />}
-			{curPage === 'saddweb' && <Saddweb icon='💰' banner={banner} />}
+			<div className='flex-grow w-full'>
+				{curPage === 'reachinbox' && <Reachinbox icon='🚀' banner={banner} />}
+				{curPage === 'openinapp' && <Openinapp icon='🏋🏻‍♂️' banner={oiaBanner} />}
+				{curPage === 'jarviot' && <Jarviot icon='🎨' banner={banner} />}
+				{curPage === 'caresy' && <Caresy icon='🧐' banner={banner} />}
+				{curPage === 'saddweb' && <Saddweb icon='💰' banner={banner} />}
+			</div>
 			<Footer />
-		</div>
+		</main>
 	);
 };
 

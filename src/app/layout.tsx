@@ -1,22 +1,39 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { cn } from '@/lib/utils';
 
-const inter = Inter({ subsets: ['latin'] });
-// const poppins = Poppins({
-// 	subsets: ['latin'],
-// 	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-// });
-
-// export const ebga = EB_Garamond({
-// 	subsets: ['latin'],
-// 	weight: ['400', '500', '600', '700', '800'],
-// });
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-	title: 'Azhar Mahmood',
+	title: 'Azhar Mahmood | Full Stack Developer',
 	description:
-		'full stack developer, simply hit here devs! to know or get in touch with me',
+		'Full Stack Developer & DevOps Engineer. Building scalable applications with React, Node.js, and Cloud technologies.',
+	openGraph: {
+		type: 'website',
+		locale: 'en_US',
+		url: 'https://hitheredevs.com/',
+		title: 'Azhar Mahmood | Full Stack Developer',
+		description:
+			'Full Stack Developer & DevOps Engineer. Building scalable applications with React, Node.js, and Cloud technologies.',
+		images: [
+			{
+				url: 'https://res.cloudinary.com/chintukepapa/image/upload/v1732861019/af0q93kahobk0luyir5c.png',
+				width: 1200,
+				height: 630,
+				alt: 'Azhar Mahmood',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Azhar Mahmood | Full Stack Developer',
+		description:
+			'Full Stack Developer & DevOps Engineer. Building scalable applications with React, Node.js, and Cloud technologies.',
+		images: [
+			'https://res.cloudinary.com/chintukepapa/image/upload/v1732861019/af0q93kahobk0luyir5c.png',
+		],
+	},
 };
 
 export default function RootLayout({
@@ -25,37 +42,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'>
-			<head>
-				<head>
-					<meta property='og:url' content='https://hitheredevs.com/' />
-					<meta property='og:type' content='website' />
-					<meta property='og:title' content='Azhar Mahmood' />
-					<meta
-						property='og:description'
-						content='full stack developer, simply hit here devs! to know or get in touch with me'
-					/>
-					<meta
-						property='og:image'
-						content='https://res.cloudinary.com/chintukepapa/image/upload/v1732861019/af0q93kahobk0luyir5c.png'
-					/>
-
-					<meta name='twitter:card' content='summary_large_image' />
-					<meta property='twitter:domain' content='hitheredevs.com' />
-					<meta property='twitter:url' content='https://hitheredevs.com/' />
-					<meta name='twitter:title' content='Azhar Mahmood' />
-					<meta
-						name='twitter:description'
-						content='full stack developer, simply hit here devs! to know or get in touch with me'
-					/>
-					<meta
-						name='twitter:image'
-						content='https://res.cloudinary.com/chintukepapa/image/upload/v1732861019/af0q93kahobk0luyir5c.png'
-					/>
-				</head>
-			</head>
+		<html lang='en' className='dark'>
 			<body
-				className={`${inter.className} antialiased bg-gray-900 max-w-[1600px] m-auto`}
+				className={cn(
+					'min-h-screen bg-background font-sans antialiased',
+					inter.variable
+				)}
 			>
 				{children}
 			</body>

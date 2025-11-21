@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageProps } from '@/types';
 import BlogHeader from '@/components/blog-header';
+import { BlogSection } from '@/components/ui/blog-section';
 
 const Reachinbox = ({ banner, icon }: PageProps) => {
 	const detailRows = [
@@ -30,9 +31,8 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 				title='Associate Backend Developer'
 			/>
 			{/*  Summary of the Intern */}
-			<div className='bg-gray-900  flex flex-col items-left justify-center px-8 text-left w-full max-w-3xl text-sm text-gray-300'>
-				<h2 className='text-2xl font-bold mb-4 text-white'>Summary</h2>
-				<p className='mb-4 text-justify'>
+			<BlogSection title='Summary'>
+				<p className='text-justify'>
 					🚀 As an Associate Backend Developer at Reachinbox, I worked on
 					optimizing high-scale email analytics systems handling millions of
 					mails per day. Implemented robust logging infrastructure using EFK
@@ -43,7 +43,7 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					experience in TimescaleDB for time-series data optimization.
 				</p>
 
-				<p className='mb-4 text-justify'>
+				<p className='text-justify'>
 					⚡ Later, I contributed to Zapmail - a cutting-edge automation product
 					built with TypeScript, Node.js, BullMQ, Redis, PostgreSQL, Docker, and
 					Kafka. Developed innovative features using Playwright for headless
@@ -54,21 +54,19 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					extensive work with modern backend technologies and cloud
 					infrastructure.
 				</p>
-			</div>
-			<div className='bg-gray-900  flex flex-col items-left justify-center px-8 text-left w-full max-w-3xl text-sm text-gray-300'>
-				<h2 className='text-2xl font-bold mb-4 text-white'>
-					How did I get the Job? 🎯
-				</h2>
+			</BlogSection>
 
-				<p className='mb-4 text-justify'>
+			<BlogSection title='How did I get the Job? 🎯'>
+				<p className='text-justify'>
 					There were multiple rounds of interviews, starting with a assignment,
 					a technical interview after a call with the HR, and a final round with
 					the CEO/CTO. 🔄
 				</p>
-				<h3 className='text-lg font-bold mb-4 text-white'>
+
+				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
 					Assignment Round 📝
 				</h3>
-				<p className='mb-4 text-justify'>
+				<p className='text-justify'>
 					Task was to build an Email Warmup tool using the google apis and
 					microsoft outlook apis. Difficult to deal with the azure auth cause
 					there was less to no documentation on it at that moment. So had to
@@ -76,10 +74,11 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					complete it in a week and submit that. They liked it and I got a call
 					back for the next round. 💪
 				</p>
-				<h3 className='text-lg font-bold mb-4 text-white'>
+
+				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
 					HR Call & Techinal Round
 				</h3>
-				<p className='mb-4 text-justify'>
+				<p className='text-justify'>
 					HR called me and asked me about my previous work experience, why do I
 					need to join basic stuff and later scheduled a technical round with a
 					senior. In the technical round I was asked about the assignment, how
@@ -92,10 +91,11 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					which I did! So after that I wasn&apos;t sure If I&apos;ll get a call
 					or not but luckily I got a call for the final round.
 				</p>
-				<h3 className='text-lg font-bold mb-4 text-white'>
+
+				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
 					Round with the CTO & Offer
 				</h3>
-				<p className='mb-4 text-justify'>
+				<p className='text-justify'>
 					We had a good discussion about the products they have been working on,
 					problems they are facing and from me he wanted to know what are my
 					motivations to join reachinbox, my future goals etc. He was happy with
@@ -109,19 +109,20 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					transition into full time role. I have discussed later why did I not
 					join full time there.
 				</p>
-			</div>
-			<div className='bg-gray-900  flex flex-col items-left justify-center px-8 text-left w-full max-w-3xl text-sm text-gray-300'>
-				<h2 className='text-2xl font-bold mb-4 text-white'>
-					Techstack & Challenges faced during work! 🛠️
-				</h2>
-				<p className='mb-4 text-justify'>
+			</BlogSection>
+
+			<BlogSection title='Techstack & Challenges faced during work! 🛠️'>
+				<p className='text-justify'>
 					So based on different things I worked on I can explain what techstack
 					did I use! Initially when I joined the company I was assigned a
 					Javascript, Node, Express based codebase with MySQL as the db for the
 					first project which was the backend microservice for Reachinbox.ai,
 				</p>
-				<h3 className='text-lg font-bold mb-4 text-white'>Logging Setup 📊</h3>
-				<p className='mb-4 text-justify'>
+
+				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
+					Logging Setup 📊
+				</h3>
+				<p className='text-justify'>
 					While I was going through the codebase and understanding the
 					architecture I was assigned with a side task which was to do R&D and
 					build a robust logging system for all thier microservices, I got to
@@ -132,10 +133,11 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					Kibana). I did a POC using dockerised setup of EFK and then
 					implemented it in the codebase.
 				</p>
-				<h3 className='text-lg font-bold mb-4 text-white'>
+
+				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
 					Backend Microservice & DB Optimizations ⚡
 				</h3>
-				<p className='mb-4 text-justify'>
+				<p className='text-justify'>
 					After the first week I went on to build some features/apis and fix
 					bugs for the backend codebase I was given to work on! I collaborated
 					with the frontned team for different page APIs bugs, new features etc.
@@ -152,16 +154,17 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					a huge improvement, similarly for marginally low freq user data loads
 					became lightning fast.
 				</p>
-				<p className='mb-4 text-justify'>
+				<p className='text-justify'>
 					After this I was assigned to work on a new project which was in works
 					named Zapmail, this was based on Typescript, Node, Express, BullMQ,
 					Redis, PostgreSQL, Docker, Kafka etc. relatively the new techstack
 					which was a relief for some reason 🤫
 				</p>
-				<h3 className='text-lg font-bold mb-4 text-white'>
+
+				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
 					Headfull Automations with Playwright 🤖
 				</h3>
-				<p className='mb-4 text-justify'>
+				<p className='text-justify'>
 					This new product is trying to do things, which were not
 					straighforwardly possible to make people&apos;s life easier. which we
 					could achieve by automating the headfull browser actions, not exactly
@@ -173,10 +176,11 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					software developers thinking that we can build something like which I
 					was building.
 				</p>
-				<h3 className='text-lg font-bold mb-4 text-white'>
+
+				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
 					Major App Features Design
 				</h3>
-				<p className='mb-4 text-justify'>
+				<p className='text-justify'>
 					One more thing which was challenging was to design several features
 					like Workspaces, in which I had the chance to revamp the entire
 					functioning of the app which was based on user level, I had to shift
@@ -190,13 +194,10 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					with multiple microservices. This was one of the coolest things I had
 					ever worked on!
 				</p>
-			</div>
+			</BlogSection>
 
-			<div className='bg-gray-900  flex flex-col items-left justify-center px-8 text-left w-full max-w-3xl text-sm text-gray-300'>
-				<h2 className='text-2xl font-bold mb-4 text-white'>
-					What did I learn overall! 🎓
-				</h2>
-				<p className='mb-4 text-justify'>
+			<BlogSection title='What did I learn overall! 🎓'>
+				<p className='text-justify'>
 					During my internship at Reachinbox, I had the opportunity to work on
 					several exciting projects that significantly enhanced my backend
 					development skills. 🚀 I was responsible for developing and
@@ -206,7 +207,7 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					Express.js, and SQL, and I was able to contribute to the successful
 					deployment of several key features. 💻
 				</p>
-				<p className='mb-4 text-justify'>
+				<p className='text-justify'>
 					One of the highlights of my internship was collaborating with a
 					talented team of developers and learning from their expertise. 👥 I
 					participated in code reviews, sprint planning, and daily stand-ups,
@@ -216,7 +217,7 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 					skills and knowledge needed to excel in my future career as a backend
 					developer. 🌟
 				</p>
-			</div>
+			</BlogSection>
 		</>
 	);
 };
