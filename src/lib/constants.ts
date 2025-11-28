@@ -1,7 +1,7 @@
 // Contact Information
 export const CONTACT_INFO = {
     calendly: 'https://calendly.com/mywritingfrenzy/30min',
-    resume: 'https://drive.google.com/file/d/1TiXyjE4jeqJ-um9DsWftEZEW-tYYBZyi/view',
+    resume: 'https://drive.google.com/file/d/1nC7uTzEePZscwHJTn72hXHeiiwUemNhD/view',
 } as const;
 
 // Navigation
