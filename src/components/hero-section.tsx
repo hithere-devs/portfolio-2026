@@ -64,7 +64,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 					</div>
 
 					{/* Big Text Layer - Behind */}
-					<div className='absolute z-0 w-full flex top-52 justify-center items-center select-none'>
+					<div className='absolute z-0 w-full flex top-40 md:top-52 justify-center items-center select-none'>
 						<h1 className='text-[15vw] md:text-[13vw] font-black tracking-tighter text-foreground/10 leading-[0.8] animate-in fade-in zoom-in-50 duration-1000'>
 							FULL STACK
 						</h1>
@@ -171,8 +171,8 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 					className='absolute inset-0 z-30 pointer-events-none flex items-center justify-center w-full max-w-[90rem] mx-auto'
 				>
 					{/* Left Side Content */}
-					<div className='absolute left-4 md:left-12 lg:left-24 top-1/2 -translate-y-1/2 max-w-xs md:max-w-sm text-left pointer-events-auto'>
-						<p className='text-2xl md:text-2xl font-medium leading-relaxed text-muted-foreground/40 hover:text-foreground transition-colors duration-500 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] cursor-default'>
+					<div className='absolute left-0 right-0 top-32 md:top-1/2 md:left-12 lg:left-24 md:right-auto md:-translate-y-1/2 max-w-full md:max-w-sm text-center md:text-left px-6 md:px-0 pointer-events-auto'>
+						<p className='text-xl md:text-2xl font-medium leading-relaxed text-muted-foreground/80 md:text-muted-foreground/40 hover:text-foreground transition-colors duration-500 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] cursor-default'>
 							Currently Building <br /> Voice AI Agents @ Samora AI, <br />
 							Open to Senior Developer Roles.
 						</p>
@@ -180,7 +180,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 
 					{/* Right Side Content */}
 					<div
-						className={`absolute right-6 md:right-16 lg:right-32 top-1/2 -translate-y-1/2 flex flex-col items-end gap-14 ${
+						className={`absolute left-0 right-0 bottom-32 md:bottom-auto md:top-1/2 md:left-auto md:right-16 lg:right-32 md:-translate-y-1/2 flex flex-row justify-center md:flex-col md:items-end gap-4 md:gap-14 ${
 							isAboutVisible ? 'pointer-events-auto' : 'pointer-events-none'
 						}`}
 					>
@@ -188,7 +188,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 							data-magnetic
 							href={CONTACT_INFO.resume}
 							target='_blank'
-							className='group relative mr-8 md:mr-24'
+							className='group relative md:mr-24'
 						>
 							<div className='w-24 h-24 md:w-48 md:h-48 rounded-full bg-background/50 backdrop-blur-sm border border-white/10 flex items-center justify-center gap-2 shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:bg-background/80'>
 								<div className='flex flex-col items-start leading-none'>
