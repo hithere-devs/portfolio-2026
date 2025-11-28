@@ -6,6 +6,7 @@ import oiaBanner from './banners/oia-banner.png';
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
 import Reachinbox from './pages/reachinbox';
+import SamoraAI from './pages/samora-ai';
 import Openinapp from './pages/openinapp';
 import Jarviot from './pages/jarviot';
 import Caresy from './pages/caresy';
@@ -32,6 +33,7 @@ const Page = () => {
 		<main className='flex flex-col min-h-screen bg-background selection:bg-primary/20'>
 			<Nav />
 			<div className='flex-grow w-full'>
+				{curPage === 'samora-ai' && <SamoraAI icon='🤖' banner={banner} />}
 				{curPage === 'reachinbox' && <Reachinbox icon='🚀' banner={banner} />}
 				{curPage === 'openinapp' && <Openinapp icon='🏋🏻‍♂️' banner={oiaBanner} />}
 				{curPage === 'jarviot' && <Jarviot icon='🎨' banner={banner} />}

@@ -24,8 +24,10 @@ export interface DetailRowProps {
 export interface Company {
     name: string;
     role: string;
-    logo: StaticImageData;
+    logo: string | StaticImageData;
     slug: string;
+    tags: string[];
+    description: string;
 }
 
 // Project Types

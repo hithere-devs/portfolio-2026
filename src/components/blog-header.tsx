@@ -1,19 +1,29 @@
 import { BlogHeaderProps } from '@/types';
-import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
 
-const BlogHeader = ({ icon, detailRows, title }: BlogHeaderProps) => {
+const BlogHeader = ({ icon, detailRows, title, banner }: BlogHeaderProps) => {
 	return (
 		<div className='relative w-full overflow-hidden'>
 			{/* Background Video/Image Container */}
 			<div className='relative w-full h-[40vh] md:h-[50vh]'>
-				<video
-					src='./rib.mp4'
-					preload='auto'
-					autoPlay
-					muted
-					loop
-					className='object-cover w-full h-full'
-				/>
+				{banner ? (
+					<Image
+						src={banner}
+						alt={title}
+						fill
+						className='object-cover w-full h-full'
+						priority
+					/>
+				) : (
+					<video
+						src='./rib.mp4'
+						preload='auto'
+						autoPlay
+						muted
+						loop
+						className='object-cover w-full h-full'
+					/>
+				)}
 				{/* Gradient Overlay */}
 				<div className='absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background' />
 				<div className='absolute inset-0 bg-background/20 backdrop-blur-[2px]' />

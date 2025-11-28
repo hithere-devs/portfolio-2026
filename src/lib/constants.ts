@@ -11,6 +11,7 @@ export const NAVIGATION = {
 
 // Company Page Mappings
 export const COMPANY_PAGE_MAPPINGS = {
+    'senior-software-engineer-samora-ai': 'samora-ai',
     'associate-backend-developer-reachinbox-ai': 'reachinbox',
     'junior-backend-developer-openinapp': 'openinapp',
     'software-developer-intern-(frontend)-jarviot': 'jarviot',

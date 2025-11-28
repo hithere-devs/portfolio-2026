@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
+import CustomCursor from '@/components/ui/custom-cursor';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -44,11 +45,9 @@ export default function RootLayout({
 	return (
 		<html lang='en' className='dark'>
 			<body
-				className={cn(
-					'min-h-screen bg-background font-sans antialiased',
-					inter.variable
-				)}
+				className={cn('min-h-screen font-sans antialiased', inter.variable)}
 			>
+				<CustomCursor />
 				{children}
 			</body>
 		</html>

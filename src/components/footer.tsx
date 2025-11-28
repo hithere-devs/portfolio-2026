@@ -8,11 +8,11 @@ export default function Footer({ className = '' }: FooterProps) {
 		<footer
 			className={`w-full border-t border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ${className}`}
 		>
-			<div className='container mx-auto px-6 max-w-5xl py-12'>
+			<div className='container mx-auto px-6 py-12'>
 				<div className='flex flex-col md:flex-row justify-between items-center gap-6'>
 					<div className='flex flex-col items-center md:items-start gap-2'>
 						<p className='text-lg font-bold tracking-tight'>
-							hithere<span className='text-primary'>devs</span>
+							hit here<span className='text-primary'> devs</span>
 						</p>
 						<p className='text-sm text-muted-foreground'>
 							Building digital experiences that matter.
@@ -45,10 +45,6 @@ export default function Footer({ className = '' }: FooterProps) {
 					<p>
 						&copy; {new Date().getFullYear()} Azhar Mahmood. All rights
 						reserved.
-					</p>
-					<p className='flex items-center gap-1'>
-						Made with <span className='text-red-500'>♥</span> using Next.js &
-						Tailwind
 					</p>
 				</div>
 			</div>

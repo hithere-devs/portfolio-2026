@@ -1,119 +1,230 @@
 'use client';
-import { Button } from '@/components/ui/button';
-import { Calendar, FileText } from 'lucide-react';
+import { Code2, Sparkles, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import { CONTACT_INFO } from '@/lib/constants';
 import { HeroSectionProps } from '@/types';
-import { Badge } from '@/components/ui/badge';
-import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import ProfileImage from '@/app/new.png';
+import {
+	motion,
+	useScroll,
+	useTransform,
+	useMotionValueEvent,
+} from 'framer-motion';
+import { useRef, useState } from 'react';
 
 export default function HeroSection({ className = '' }: HeroSectionProps) {
-	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 	const containerRef = useRef<HTMLDivElement>(null);
+	const [isAboutVisible, setIsAboutVisible] = useState(false);
+	const { scrollYProgress } = useScroll({
+		target: containerRef,
+		offset: ['start start', 'end end'],
+	});
 
-	useEffect(() => {
-		const handleMouseMove = (event: MouseEvent) => {
-			if (containerRef.current) {
-				const { left, top, width, height } =
-					containerRef.current.getBoundingClientRect();
-				const x = (event.clientX - left) / width;
-				const y = (event.clientY - top) / height;
-				setMousePosition({ x, y });
-			}
-		};
+	useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+		setIsAboutVisible(latest > 0.3);
+	});
 
-		window.addEventListener('mousemove', handleMouseMove);
-		return () => window.removeEventListener('mousemove', handleMouseMove);
-	}, []);
+	// Hero Text Animations (Fade out and move up)
+	const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+	const heroY = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
+	const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.9]);
+
+	// About Content Animations (Fade in and move up)
+	const aboutOpacity = useTransform(scrollYProgress, [0.3, 0.5], [0, 1]);
+	const aboutY = useTransform(scrollYProgress, [0.3, 0.5], [50, 0]);
+
+	// Image Animations (Slight scale change)
+	const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
+
+	// Image Filter Animation (Glow up on scroll)
+	const imageFilter = useTransform(
+		scrollYProgress,
+		[0.3, 0.5],
+		['brightness(0.2) grayscale(100%)', 'brightness(1) grayscale(0%)']
+	);
 
 	return (
-		<section
+		<div
 			ref={containerRef}
 			id='about'
-			className={`relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden ${className}`}
+			className={`relative h-[250vh] ${className}`}
 		>
-			<div className='container mx-auto px-6 max-w-5xl relative z-10'>
-				<div className='flex flex-col items-start max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-1000'>
-					<Badge variant='secondary' className='mb-6 px-4 py-1 text-sm'>
-						Available for hire
-					</Badge>
-					<h1 className='text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]'>
-						Building digital <br />
-						<span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/50'>
-							experiences
-						</span>{' '}
-						that matter.
-					</h1>
-					<p className='text-xl text-muted-foreground leading-relaxed max-w-2xl mb-10'>
-						I&apos;m <strong className='text-foreground'>Azhar Mahmood</strong>,
-						a Full Stack Developer & DevOps Engineer. I specialize in building
-						scalable, high-performance applications using{' '}
-						<span className='text-foreground font-medium'>React</span>,{' '}
-						<span className='text-foreground font-medium'>Node.js</span>, and
-						Cloud technologies.
-					</p>
-
-					<div className='flex flex-wrap gap-4'>
-						<Button
-							asChild
-							size='lg'
-							className='h-12 px-8 text-base rounded-full'
-						>
-							<Link
-								href={CONTACT_INFO.calendly}
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								<Calendar className='mr-2 h-4 w-4' />
-								Book a call
-							</Link>
-						</Button>
-						<Button
-							asChild
-							variant='outline'
-							size='lg'
-							className='h-12 px-8 text-base rounded-full border-border/50 hover:bg-secondary/50'
-						>
-							<Link
-								href={CONTACT_INFO.resume}
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								<FileText className='mr-2 h-4 w-4' />
-								Resume
-							</Link>
-						</Button>
+			<div className='sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center pt-24 pb-12'>
+				{/* --- HERO STATE CONTENT - BACK LAYER (Fades Out) --- */}
+				<motion.div
+					style={{ opacity: heroOpacity, y: heroY, scale: heroScale }}
+					className='absolute inset-0 flex flex-col items-center z-0 pointer-events-none'
+				>
+					{/* Top Label */}
+					<div className='absolute top-24 md:top-32 animate-in fade-in slide-in-from-top-8 duration-1000 delay-100'>
+						<span className='text-sm md:text-base font-semibold tracking-[0.3em] text-muted-foreground uppercase'>
+							Hi there, I&apos;m Azhar
+						</span>
 					</div>
+
+					{/* Big Text Layer - Behind */}
+					<div className='absolute z-0 w-full flex top-52 justify-center items-center select-none'>
+						<h1 className='text-[15vw] md:text-[13vw] font-black tracking-tighter text-foreground/10 leading-[0.8] animate-in fade-in zoom-in-50 duration-1000'>
+							FULL STACK
+						</h1>
+					</div>
+				</motion.div>
+
+				{/* --- HERO STATE CONTENT - FRONT LAYER (Fades Out) --- */}
+				<motion.div
+					style={{ opacity: heroOpacity, y: heroY, scale: heroScale }}
+					className='absolute inset-0 flex flex-col items-center z-20 pointer-events-none'
+				>
+					{/* Big Text Layer - Front */}
+					<div className='absolute z-20 bottom-0 w-full flex justify-center items-center select-none'>
+						<h1 className='text-[15vw] md:text-[13vw] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-foreground to-foreground/0 leading-[0.8] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300'>
+							DEVELOPER
+						</h1>
+					</div>
+				</motion.div>
+
+				{/* --- CENTRAL IMAGE (Stays Sticky) --- */}
+				<motion.div
+					style={{ scale: imageScale }}
+					className='relative z-10 w-[80vw] md:w-[45vw] lg:w-[35vw] aspect-[3/4] max-w-lg'
+				>
+					{/* Decorative Elements (Attached to Hero State) */}
+					<motion.div
+						style={{ opacity: heroOpacity }}
+						className='absolute top-1/4 -left-12 md:-left-24 z-30 hidden md:block animate-in fade-in slide-in-from-left-8 duration-1000 delay-500'
+					>
+						<div className='bg-card/30 backdrop-blur-sm border border-border/50 p-4 rounded-2xl shadow-xl max-w-[200px]'>
+							<Code2 className='w-8 h-8 text-primary mb-2' />
+							<p className='text-xs text-muted-foreground font-medium leading-relaxed'>
+								Building scalable solutions with modern tech stacks.
+							</p>
+						</div>
+					</motion.div>
+
+					<motion.div
+						style={{ opacity: heroOpacity }}
+						className='absolute bottom-1/4 -right-12 md:-right-24 z-30 hidden md:block animate-in fade-in slide-in-from-right-8 duration-1000 delay-700'
+					>
+						<div className='bg-card/80 backdrop-blur-sm border border-border/50 p-4 rounded-2xl shadow-xl max-w-[200px] text-right'>
+							<div className='flex justify-end mb-2'>
+								<Sparkles className='w-8 h-8 text-purple-500' />
+							</div>
+							<p className='text-xs text-muted-foreground font-medium leading-relaxed'>
+								Focused on motion, interaction, and user experience.
+							</p>
+						</div>
+					</motion.div>
+
+					{/* Main Image */}
+					<div
+						className='relative w-full h-full rounded-full md:rounded-[3rem] overflow-hidden shadow-2xl group'
+						data-image-hover
+						onMouseMove={(e) => {
+							const rect = e.currentTarget.getBoundingClientRect();
+							const x = e.clientX - rect.left;
+							const y = e.clientY - rect.top;
+							e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+							e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+						}}
+					>
+						{/* Base Image (Darkened) */}
+						<motion.div
+							className='absolute inset-0'
+							style={{ filter: imageFilter }}
+						>
+							<Image
+								src={ProfileImage}
+								alt='Azhar Mahmood'
+								fill
+								className='object-cover'
+								priority
+							/>
+						</motion.div>
+
+						{/* Spotlight Image (Revealed on Hover) */}
+						<div
+							className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none'
+							style={{
+								maskImage:
+									'radial-gradient(circle 150px at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%)',
+								WebkitMaskImage:
+									'radial-gradient(circle 150px at var(--mouse-x) var(--mouse-y), black 0%, transparent 100%)',
+							}}
+						>
+							<Image
+								src={ProfileImage}
+								alt='Azhar Mahmood'
+								fill
+								className='object-cover'
+								priority
+							/>
+						</div>
+
+						<div className='absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60 pointer-events-none' />
+					</div>
+				</motion.div>
+
+				{/* --- ABOUT CONTENT (Fades In on Sides) --- */}
+				<motion.div
+					style={{ opacity: aboutOpacity, y: aboutY }}
+					className='absolute inset-0 z-30 pointer-events-none flex items-center justify-center w-full max-w-[90rem] mx-auto'
+				>
+					{/* Left Side Content */}
+					<div className='absolute left-4 md:left-12 lg:left-24 top-1/2 -translate-y-1/2 max-w-xs md:max-w-sm text-left pointer-events-auto'>
+						<p className='text-2xl md:text-2xl font-medium leading-relaxed text-muted-foreground/40 hover:text-foreground transition-colors duration-500 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] cursor-default'>
+							Currently Building <br /> Voice AI Agents @ Samora AI, <br />
+							Open to Senior Developer Roles.
+						</p>
+					</div>
+
+					{/* Right Side Content */}
+					<div
+						className={`absolute right-6 md:right-16 lg:right-32 top-1/2 -translate-y-1/2 flex flex-col items-end gap-14 ${
+							isAboutVisible ? 'pointer-events-auto' : 'pointer-events-none'
+						}`}
+					>
+						<Link
+							data-magnetic
+							href={CONTACT_INFO.resume}
+							target='_blank'
+							className='group relative mr-8 md:mr-24'
+						>
+							<div className='w-24 h-24 md:w-48 md:h-48 rounded-full bg-background/50 backdrop-blur-sm border border-white/10 flex items-center justify-center gap-2 shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:bg-background/80'>
+								<div className='flex flex-col items-start leading-none'>
+									<span className='text-xs md:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors'>
+										View
+									</span>
+									<span className='text-xs md:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors'>
+										Resume
+									</span>
+								</div>
+								<ArrowUpRight className='w-8 h-8 md:w-16 md:h-16  transition-transform duration-500 group-hover:rotate-45' />
+							</div>
+						</Link>
+
+						<Link href='#experience' className='group relative' data-magnetic>
+							<div className='w-32 h-32 md:w-56 md:h-56 rounded-full bg-white flex items-center justify-center shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:bg-white/90'>
+								<div className='flex flex-col items-start leading-none'>
+									<span className='text-sm md:text-xl font-bold text-black'>
+										Read
+									</span>
+									<span className='text-sm md:text-xl font-bold text-black'>
+										More
+									</span>
+								</div>
+								<ArrowUpRight className='w-8 h-8 md:w-20 md:h-20 text-black transition-transform duration-500 group-hover:rotate-45' />
+							</div>
+						</Link>
+					</div>
+				</motion.div>
+
+				{/* Background Blobs (Persistent) */}
+				<div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none'>
+					<div className='absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl mix-blend-screen animate-blob' />
+					<div className='absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-3xl mix-blend-screen animate-blob animation-delay-2000' />
 				</div>
 			</div>
-
-			{/* Background decorative elements */}
-			<div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-10'>
-				<div
-					className='absolute top-0 left-1/4 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob'
-					style={{
-						transform: `translate(${mousePosition.x * 20}px, ${
-							mousePosition.y * 20
-						}px)`,
-					}}
-				/>
-				<div
-					className='absolute top-0 right-1/4 w-72 h-72 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'
-					style={{
-						transform: `translate(${mousePosition.x * -20}px, ${
-							mousePosition.y * -20
-						}px)`,
-					}}
-				/>
-				<div
-					className='absolute -bottom-8 left-1/3 w-72 h-72 bg-pink-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'
-					style={{
-						transform: `translate(${mousePosition.x * 15}px, ${
-							mousePosition.y * 15
-						}px)`,
-					}}
-				/>
-			</div>
-		</section>
+		</div>
 	);
 }

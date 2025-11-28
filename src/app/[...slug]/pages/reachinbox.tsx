@@ -2,8 +2,11 @@ import React from 'react';
 import { PageProps } from '@/types';
 import BlogHeader from '@/components/blog-header';
 import { BlogSection } from '@/components/ui/blog-section';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { ExternalLink } from 'lucide-react';
 
-const Reachinbox = ({ banner, icon }: PageProps) => {
+const Reachinbox = ({ icon }: PageProps) => {
 	const detailRows = [
 		{
 			label: 'Company',
@@ -25,90 +28,115 @@ const Reachinbox = ({ banner, icon }: PageProps) => {
 	return (
 		<>
 			<BlogHeader
-				banner={banner}
+				// banner={banner} // Use video instead of static banner
 				icon={icon}
 				detailRows={detailRows}
 				title='Associate Backend Developer'
 			/>
 			{/*  Summary of the Intern */}
 			<BlogSection title='Summary'>
-				<p className='text-justify'>
-					🚀 As an Associate Backend Developer at Reachinbox, I worked on
-					optimizing high-scale email analytics systems handling millions of
-					mails per day. Implemented robust logging infrastructure using EFK
-					stack (Elastic, FluentD, Kibana) and NewRelic for monitoring. Through
-					strategic DB optimizations and query improvements, I achieved 70-90%
-					reduction in API response times across services. Tech stack included
-					Node.js, Express, MySQL for the main product, with additional
-					experience in TimescaleDB for time-series data optimization.
-				</p>
+				<div className='space-y-6 text-lg leading-relaxed text-muted-foreground'>
+					<p className='text-justify'>
+						🚀 As an Associate Backend Developer at Reachinbox, I worked on
+						optimizing high-scale email analytics systems handling millions of
+						mails per day. Implemented robust logging infrastructure using EFK
+						stack (Elastic, FluentD, Kibana) and NewRelic for monitoring.
+						Through strategic DB optimizations and query improvements, I
+						achieved 70-90% reduction in API response times across services.
+						Tech stack included Node.js, Express, MySQL for the main product,
+						with additional experience in TimescaleDB for time-series data
+						optimization.
+					</p>
 
-				<p className='text-justify'>
-					⚡ Later, I contributed to Zapmail - a cutting-edge automation product
-					built with TypeScript, Node.js, BullMQ, Redis, PostgreSQL, Docker, and
-					Kafka. Developed innovative features using Playwright for headless
-					browser automations and designed core functionalities like workspace
-					management. Implemented sophisticated queueing architectures for
-					handling complex workflows between microservices, particularly for
-					Google Workspace exports to third-party tools. 🛠️ The role involved
-					extensive work with modern backend technologies and cloud
-					infrastructure.
-				</p>
+					<p className='text-justify'>
+						⚡ Later, I contributed to Zapmail - a cutting-edge automation
+						product built with TypeScript, Node.js, BullMQ, Redis, PostgreSQL,
+						Docker, and Kafka. Developed innovative features using Playwright
+						for headless browser automations and designed core functionalities
+						like workspace management. Implemented sophisticated queueing
+						architectures for handling complex workflows between microservices,
+						particularly for Google Workspace exports to third-party tools. 🛠️
+						The role involved extensive work with modern backend technologies
+						and cloud infrastructure.
+					</p>
+
+					<div className='flex justify-center pt-4'>
+						<Button asChild className='gap-2' size='lg'>
+							<Link
+								href='https://reachinbox.ai'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								Visit Reachinbox <ExternalLink size={18} />
+							</Link>
+						</Button>
+					</div>
+				</div>
 			</BlogSection>
 
 			<BlogSection title='How did I get the Job? 🎯'>
-				<p className='text-justify'>
-					There were multiple rounds of interviews, starting with a assignment,
-					a technical interview after a call with the HR, and a final round with
-					the CEO/CTO. 🔄
-				</p>
+				<div className='space-y-6 text-lg leading-relaxed text-muted-foreground'>
+					<p className='text-justify'>
+						There were multiple rounds of interviews, starting with a
+						assignment, a technical interview after a call with the HR, and a
+						final round with the CEO/CTO. 🔄
+					</p>
 
-				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
-					Assignment Round 📝
-				</h3>
-				<p className='text-justify'>
-					Task was to build an Email Warmup tool using the google apis and
-					microsoft outlook apis. Difficult to deal with the azure auth cause
-					there was less to no documentation on it at that moment. So had to
-					somehow try and test different approaches to make it work, managed to
-					complete it in a week and submit that. They liked it and I got a call
-					back for the next round. 💪
-				</p>
+					<div className='space-y-4'>
+						<h3 className='text-2xl font-bold text-foreground flex items-center gap-2'>
+							<span className='text-primary'>📝</span> Assignment Round
+						</h3>
+						<p className='text-justify pl-2 border-l-2 border-primary/20'>
+							Task was to build an Email Warmup tool using the google apis and
+							microsoft outlook apis. Difficult to deal with the azure auth
+							cause there was less to no documentation on it at that moment. So
+							had to somehow try and test different approaches to make it work,
+							managed to complete it in a week and submit that. They liked it
+							and I got a call back for the next round. 💪
+						</p>
+					</div>
 
-				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
-					HR Call & Techinal Round
-				</h3>
-				<p className='text-justify'>
-					HR called me and asked me about my previous work experience, why do I
-					need to join basic stuff and later scheduled a technical round with a
-					senior. In the technical round I was asked about the assignment, how
-					did I approach it, what were the challenges I faced, how did I solve
-					them, and some basic questions on the techstack I used in the
-					assignment. I was also asked about my previous work experiences,
-					followed by a live coding ques basic leetcode question, which I was
-					able to tell the approach but not solve it. I struggle with DSA as I
-					already told them, and he gave me another function implementation
-					which I did! So after that I wasn&apos;t sure If I&apos;ll get a call
-					or not but luckily I got a call for the final round.
-				</p>
+					<div className='space-y-4'>
+						<h3 className='text-2xl font-bold text-foreground flex items-center gap-2'>
+							<span className='text-primary'>👨‍💻</span> HR Call & Technical Round
+						</h3>
+						<p className='text-justify pl-2 border-l-2 border-primary/20'>
+							HR called me and asked me about my previous work experience, why
+							do I need to join basic stuff and later scheduled a technical
+							round with a senior. In the technical round I was asked about the
+							assignment, how did I approach it, what were the challenges I
+							faced, how did I solve them, and some basic questions on the
+							techstack I used in the assignment. I was also asked about my
+							previous work experiences, followed by a live coding ques basic
+							leetcode question, which I was able to tell the approach but not
+							solve it. I struggle with DSA as I already told them, and he gave
+							me another function implementation which I did! So after that I
+							wasn&apos;t sure If I&apos;ll get a call or not but luckily I got
+							a call for the final round.
+						</p>
+					</div>
 
-				<h3 className='text-xl font-semibold text-foreground mt-8 mb-4'>
-					Round with the CTO & Offer
-				</h3>
-				<p className='text-justify'>
-					We had a good discussion about the products they have been working on,
-					problems they are facing and from me he wanted to know what are my
-					motivations to join reachinbox, my future goals etc. He was happy with
-					my answer and told me about some good problems he would like me to
-					work on if I join them. His focus was that there was no work-life
-					balance kind of thing when joining them, which I was hesitant about
-					earlier but I was ready to take the challenge as it was early in my
-					career and learn as much as I can. So when I got the offer via HR I
-					accepted and joined them in May 2024. Offer was for an Internship but
-					actually expecting me to work like full time job, after 3 months
-					transition into full time role. I have discussed later why did I not
-					join full time there.
-				</p>
+					<div className='space-y-4'>
+						<h3 className='text-2xl font-bold text-foreground flex items-center gap-2'>
+							<span className='text-primary'>🤝</span> Round with the CTO &
+							Offer
+						</h3>
+						<p className='text-justify pl-2 border-l-2 border-primary/20'>
+							We had a good discussion about the products they have been working
+							on, problems they are facing and from me he wanted to know what
+							are my motivations to join reachinbox, my future goals etc. He was
+							happy with my answer and told me about some good problems he would
+							like me to work on if I join them. His focus was that there was no
+							work-life balance kind of thing when joining them, which I was
+							hesitant about earlier but I was ready to take the challenge as it
+							was early in my career and learn as much as I can. So when I got
+							the offer via HR I accepted and joined them in May 2024. Offer was
+							for an Internship but actually expecting me to work like full time
+							job, after 3 months transition into full time role. I have
+							discussed later why did I not join full time there.
+						</p>
+					</div>
+				</div>
 			</BlogSection>
 
 			<BlogSection title='Techstack & Challenges faced during work! 🛠️'>

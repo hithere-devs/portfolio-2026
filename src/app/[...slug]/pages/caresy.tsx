@@ -1,48 +1,54 @@
-import { PageProps } from '@/types';
-import Image from 'next/image';
 import React from 'react';
-
+import { PageProps } from '@/types';
+import BlogHeader from '@/components/blog-header';
+import { BlogSection } from '@/components/ui/blog-section';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { ExternalLink } from 'lucide-react';
 
 const Caresy = ({ banner, icon }: PageProps) => {
+	const detailRows = [
+		{
+			label: 'Company',
+			value: 'Caresy',
+			icon: '🏥',
+		},
+		{
+			label: 'Location',
+			value: 'Remote',
+			icon: '📍',
+		},
+		{
+			label: 'Status',
+			value: 'Coming Soon',
+			icon: '⏳',
+		},
+	];
+
 	return (
 		<>
-			<div className='relative w-full h-[25vh]'>
-				<Image
-					src={banner}
-					alt='Banner'
-					fill
-					className='object-cover'
-					priority
-				/>
-				<div className='absolute inset-0 bg-black bg-opacity-50' />
-			</div>
-			<div className='flex flex-col items-left w-full max-w-3xl px-7 select-none'>
-				<span className='text-[4rem] -mt-14 z-50'>{icon}</span>
-			</div>
-			<div className='bg-gray-900 text-white flex flex-col items-left justify-center p-8 text-left w-full max-w-3xl'>
-				<h1 className='text-4xl font-extrabold mb-8 max-sm:text-xl'>
-					Software Developer Intern
-				</h1>
-
-				<p>
-					<strong className='underline decoration-[0.5px] underline-offset-[3px]'>
-						Company:
-					</strong>{' '}
-					Caresy
-				</p>
-				<p>
-					<strong className='underline decoration-[0.5px] underline-offset-[3px]'>
-						Location:
-					</strong>{' '}
-					Remote IN
-				</p>
-				<p>
-					<strong className='underline decoration-[0.5px] underline-offset-[3px]'>
-						Details:
-					</strong>{' '}
-					Coming Soon...
-				</p>
-			</div>
+			<BlogHeader
+				banner={banner}
+				icon={icon}
+				detailRows={detailRows}
+				title='Software Developer Intern'
+			/>
+			<BlogSection title='Details'>
+				<div className='flex flex-col items-center justify-center py-10 space-y-6'>
+					<p className='text-xl text-muted-foreground text-center'>
+						Detailed experience coming soon...
+					</p>
+					<Button asChild variant='outline' className='gap-2'>
+						<Link
+							href='https://caresy.in'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							Visit Website <ExternalLink size={16} />
+						</Link>
+					</Button>
+				</div>
+			</BlogSection>
 		</>
 	);
 };
