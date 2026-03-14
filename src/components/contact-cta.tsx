@@ -8,11 +8,7 @@ import { CONTACT_INFO } from '@/lib/constants';
 
 export default function ContactCTA() {
 	return (
-		<section className='py-24 relative overflow-hidden'>
-			{/* Background Gradients */}
-			<div className='absolute inset-0 bg-gradient-to-b from-background via-secondary/5 to-background' />
-			<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl' />
-
+		<section className='py-24 relative'>
 			<div className='container mx-auto px-6 relative z-10'>
 				<motion.div
 					initial={{ opacity: 0, y: 40 }}

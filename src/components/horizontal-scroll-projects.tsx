@@ -13,13 +13,23 @@ export default function HorizontalScrollProjects() {
 	});
 
 	const x = useTransform(scrollYProgress, [0, 1], ['1%', '-75%']);
+	const backgroundX = useTransform(scrollYProgress, [0, 1], ['0%', '-20%']);
 
 	const allProjects = [...projectsData.featured, ...projectsData.past];
 
 	return (
 		<section ref={targetRef} className='relative h-[300vh] bg-background'>
 			<div className='sticky top-0 flex h-screen items-center overflow-hidden'>
-				<motion.div style={{ x }} className='flex gap-12 px-12 md:px-24'>
+				{/* Abstract Background Text */}
+				<div className='absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.02]'>
+					<motion.div style={{ x: backgroundX }} className='whitespace-nowrap'>
+						<h1 className='text-[30vw] font-black tracking-tighter'>
+							SELECTED WORKS
+						</h1>
+					</motion.div>
+				</div>
+
+				<motion.div style={{ x }} className='flex gap-12 px-12 md:px-24 relative z-10'>
 					{/* Title Card */}
 					<div className='flex h-[50vh] w-[80vw] md:w-[30vw] shrink-0 flex-col justify-center p-8'>
 						<h2 className='text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]'>
@@ -37,7 +47,7 @@ export default function HorizontalScrollProjects() {
 							href={project.link}
 							key={index}
 							target='_blank'
-							className='group relative h-[60vh] w-[85vw] md:w-[40vw] shrink-0 overflow-hidden rounded-[2.5rem] bg-secondary/5 border border-white/5 backdrop-blur-sm transition-all duration-500 hover:bg-secondary/10'
+							className='group relative h-[60vh] w-[85vw] md:w-[40vw] shrink-0 overflow-hidden rounded-[2.5rem] bg-secondary/5 border border-white/5 backdrop-blur-sm transition-all duration-500 hover:bg-secondary/10 hover:border-white/10'
 						>
 							<div className='absolute inset-0 bg-gradient-to-b from-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
 
