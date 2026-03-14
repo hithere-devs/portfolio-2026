@@ -172,7 +172,6 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 					{/* Main Image */}
 					<div
 						className='relative w-full h-full rounded-full md:rounded-[3rem] overflow-hidden shadow-2xl group'
-						data-image-hover
 						onMouseMove={(e) => {
 							const rect = e.currentTarget.getBoundingClientRect();
 							const x = e.clientX - rect.left;
@@ -229,7 +228,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 							<span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-primary'>
 								Voice AI Agents
 							</span>
-							<br /> @ Samora AI.
+							<br /> <a href='https://samora.ai' target='_blank' rel='noopener noreferrer' className='text-2xl' data-image-hover>@ Samora AI (YC W26)</a>
 						</p>
 						<p className='mt-4 md:mt-6 text-sm md:text-lg text-muted-foreground font-medium'>
 							Open to Senior Developer Roles.

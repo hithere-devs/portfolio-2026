@@ -81,7 +81,7 @@ export default function CustomCursor() {
 			width: 32,
 			height: 32,
 			borderRadius: '50%',
-			scale: 3,
+			scale: 5,
 		},
 		button: {
 			x: (buttonRect?.x || 0) + (buttonRect?.width || 0) / 2 - buttonSize / 2,
