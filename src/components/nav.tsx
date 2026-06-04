@@ -100,14 +100,6 @@ const Nav = () => {
 						</p>
 					</Link>
 
-					{/* Desktop Menu - Hidden for now to use the requested bubble/staggered menu everywhere or just mobile?
-                        The user asked to "change the nav", implying the whole nav.
-                        I'll keep the desktop links for utility but maybe hide them if the user wants the "bubble menu" to be the main interaction.
-                        Let's keep standard links for desktop for better UX, but add the bubble menu for mobile OR make the bubble menu the primary way.
-                        "Use the staggered menu... use the trigger for the menu from the bubble menu"
-                        I will make the Bubble Menu the PRIMARY navigation for a unique feel.
-                    */}
-
 					{/* Bubble Trigger */}
 					<motion.button
 						data-magnetic
@@ -172,7 +164,7 @@ const Nav = () => {
 							<Link
 								href={item.href}
 								onClick={() => setIsOpen(false)}
-								className='block w-full text-center text-4xl md:text-6xl font-black tracking-tighter hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:to-purple-500 transition-all duration-300'
+								className='block w-full text-center text-4xl md:text-6xl font-black tracking-tighter hover:text-primary transition-all duration-300'
 							>
 								{item.title}
 							</Link>

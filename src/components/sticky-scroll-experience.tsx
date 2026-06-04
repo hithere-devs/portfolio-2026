@@ -44,7 +44,7 @@ export default function StickyScrollExperience() {
 								transition={{ duration: 0.5, ease: 'easeOut' }}
 								className='absolute inset-0 flex flex-col justify-center'
 							>
-								<h2 className='text-7xl xl:text-8xl font-black tracking-tighter leading-[0.9] text-transparent bg-clip-text bg-gradient-to-b from-foreground to-foreground/40'>
+								<h2 className='text-7xl xl:text-8xl font-black tracking-tighter leading-[0.9] text-foreground'>
 									{activeCompany.name}
 								</h2>
 								<p className='mt-6 text-2xl text-muted-foreground font-medium'>

@@ -95,7 +95,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 				>
 					{/* Big Text Layer - Front */}
 					<div className='absolute z-20 bottom-0 w-full flex justify-center items-center select-none'>
-						<h1 className='text-[15vw] md:text-[13vw] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-foreground to-foreground/0 leading-[0.8] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300'>
+						<h1 className='text-[15vw] md:text-[13vw] font-black tracking-tighter text-foreground leading-[0.8] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300'>
 							DEVELOPER
 						</h1>
 					</div>
@@ -225,7 +225,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 					<div className='absolute left-6 right-6 bottom-8 md:bottom-auto md:left-24 md:right-auto md:top-1/2 md:-translate-y-1/2 max-w-[280px] md:max-w-md pointer-events-auto'>
 						<p className='text-2xl md:text-5xl font-bold leading-tight text-foreground/80 hover:text-foreground transition-colors duration-500 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] cursor-default tracking-tight'>
 							Currently Building <br />
-							<span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-primary'>
+							<span className='text-purple-400'>
 								Voice AI Agents
 							</span>
 							<br /> <a href='https://samora.ai' target='_blank' rel='noopener noreferrer' className='text-2xl' data-image-hover>@ Samora AI (YC W26)</a>
@@ -303,38 +303,6 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 
 				{/* Background Blobs & SVG Patterns (Persistent) */}
 				<div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none'>
-					{/* Playful Floating SVG Doodles */}
-					<motion.div
-						animate={{ y: [0, -20, 0], rotate: [0, 10, -10, 0] }}
-						transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-						className="absolute top-[15%] left-[10%] opacity-20"
-					>
-						<svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M50 10 L60 40 L90 50 L60 60 L50 90 L40 60 L10 50 L40 40 Z" stroke="currentColor" strokeWidth="4" strokeLinejoin="round"/>
-						</svg>
-					</motion.div>
-
-					<motion.div
-						animate={{ y: [0, 30, 0], rotate: [0, -15, 15, 0] }}
-						transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-						className="absolute top-[25%] right-[15%] opacity-20"
-					>
-						<svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M20 50 Q 40 10, 60 50 T 100 50" stroke="currentColor" strokeWidth="4" strokeLinecap="round" fill="none"/>
-							<path d="M20 60 Q 40 20, 60 60 T 100 60" stroke="currentColor" strokeWidth="4" strokeLinecap="round" fill="none"/>
-						</svg>
-					</motion.div>
-
-					<motion.div
-						animate={{ y: [0, -15, 0], x: [0, 15, 0] }}
-						transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-						className="absolute bottom-[20%] left-[20%] opacity-20"
-					>
-						<svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="4" strokeDasharray="10 10"/>
-						</svg>
-					</motion.div>
-
 					<div className='absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl mix-blend-screen animate-blob' />
 					<div className='absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-3xl mix-blend-screen animate-blob animation-delay-2000' />
 				</div>

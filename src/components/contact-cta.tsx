@@ -19,7 +19,7 @@ export default function ContactCTA() {
 				>
 					<h2 className='text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]'>
 						Ready to bring <br />
-						<span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/50'>
+						<span className='text-primary'>
 							your ideas to life?
 						</span>
 					</h2>
