@@ -5,358 +5,358 @@ export const skillsData: SkillsData = {
         {
             title: 'NodeJS',
             image:
-                'https://storage.googleapis.com/hithere-devs/NodeJS.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/NodeJS.svg',
         },
         {
             title: 'Python',
             image:
-                'https://storage.googleapis.com/hithere-devs/Python.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Python.svg',
         },
         {
             title: 'Go Gin',
             image:
-                'https://storage.googleapis.com/hithere-devs/GoGin.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/GoGin.svg',
         },
         {
             title: 'AWS',
             image:
-                'https://storage.googleapis.com/hithere-devs/AWS.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/AWS.svg',
         },
         {
             title: 'React',
             image:
-                'https://storage.googleapis.com/hithere-devs/React.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/React.svg',
         },
         {
             title: 'Next JS',
             image:
-                'https://storage.googleapis.com/hithere-devs/Next.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Next.svg',
         },
         {
             title: 'Docker',
             image:
-                'https://storage.googleapis.com/hithere-devs/Docker.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Docker.svg',
         },
         {
             title: 'Kubernetes',
             image:
-                'https://storage.googleapis.com/hithere-devs/Kubernetes.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Kubernetes.svg',
         },
         {
             title: 'Redis',
             image:
-                'https://storage.googleapis.com/hithere-devs/Redis.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Redis.svg',
         },
         {
             title: 'PostgreSQL',
             image:
-                'https://storage.googleapis.com/hithere-devs/Postgres.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Postgres.svg',
         },
         {
             title: 'MongoDB',
             image:
-                'https://storage.googleapis.com/hithere-devs/Mongo.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Mongo.svg',
         },
         {
             title: 'React Native',
             image:
-                'https://storage.googleapis.com/hithere-devs/React.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/React.svg',
         },
     ],
     backend: [
         {
             title: 'NodeJS',
             image:
-                'https://storage.googleapis.com/hithere-devs/NodeJS.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/NodeJS.svg',
         },
         {
             title: 'Express.js',
             image:
-                'https://storage.googleapis.com/hithere-devs/Express.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Express.svg',
         },
         {
             title: 'SpringBoot',
             image:
-                'https://storage.googleapis.com/hithere-devs/SpringBoot.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/SpringBoot.svg',
         },
         {
             title: 'Redis',
             image:
-                'https://storage.googleapis.com/hithere-devs/Redis.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Redis.svg',
         },
         {
             title: 'Kafka',
             image:
-                'https://storage.googleapis.com/hithere-devs/Kafka.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Kafka.svg',
         },
         {
             title: 'MongoDB',
             image:
-                'https://storage.googleapis.com/hithere-devs/Mongo.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Mongo.svg',
         },
         {
             title: 'PostgreSQL',
             image:
-                'https://storage.googleapis.com/hithere-devs/Postgres.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Postgres.svg',
         },
         {
             title: 'Oracle',
             image:
-                'https://storage.googleapis.com/hithere-devs/Oracle.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Oracle.svg',
         },
         {
             title: 'MySQL',
             image:
-                'https://storage.googleapis.com/hithere-devs/MySQL.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/MySQL.svg',
         },
         {
             title: 'Swagger',
             image:
-                'https://storage.googleapis.com/hithere-devs/Swagger.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Swagger.svg',
         },
         {
             title: 'Postman',
             image:
-                'https://storage.googleapis.com/hithere-devs/Postman.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Postman.svg',
         },
         {
             title: 'JWT',
             image:
-                'https://storage.googleapis.com/hithere-devs/JWT.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/JWT.svg',
         },
     ],
     frontend: [
         {
             title: 'React',
             image:
-                'https://storage.googleapis.com/hithere-devs/React.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/React.svg',
         },
         {
             title: 'Next JS',
             image:
-                'https://storage.googleapis.com/hithere-devs/Next.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Next.svg',
         },
 
         {
             title: 'React Router',
             image:
-                'https://storage.googleapis.com/hithere-devs/ReactRouter.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/ReactRouter.svg',
         },
         {
             title: 'Redux',
             image:
-                'https://storage.googleapis.com/hithere-devs/Redux.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Redux.svg',
         },
         {
             title: 'TailwindCSS',
             image:
-                'https://storage.googleapis.com/hithere-devs/TailwindCSS.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/TailwindCSS.svg',
         },
         {
             title: 'MUI',
             image:
-                'https://storage.googleapis.com/hithere-devs/MUI.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/MUI.svg',
         },
         {
             title: 'Bootstrap',
             image:
-                'https://storage.googleapis.com/hithere-devs/Bootstrap.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Bootstrap.svg',
         },
         {
             title: 'Styled Components',
             image:
-                'https://storage.googleapis.com/hithere-devs/StyledComponents.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/StyledComponents.svg',
         },
         {
             title: 'Semantic UI React',
             image:
-                'https://storage.googleapis.com/hithere-devs/SemanticUIReact.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/SemanticUIReact.svg',
         },
         {
             title: 'Chart.js',
             image:
-                'https://storage.googleapis.com/hithere-devs/Chartjs.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Chartjs.svg',
         },
         {
             title: 'Expo',
             image:
-                'https://storage.googleapis.com/hithere-devs/Expo.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Expo.svg',
         },
         {
             title: 'Threejs',
             image:
-                'https://storage.googleapis.com/hithere-devs/Threejs.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Threejs.svg',
         },
         {
             title: 'HTML5',
             image:
-                'https://storage.googleapis.com/hithere-devs/HTML5.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/HTML5.svg',
         },
         {
             title: 'CSS3',
             image:
-                'https://storage.googleapis.com/hithere-devs/CSS3.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/CSS3.svg',
         },
         {
             title: 'SASS',
             image:
-                'https://storage.googleapis.com/hithere-devs/SASS.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Sass.svg',
         },
         {
             title: 'React Native',
             image:
-                'https://storage.googleapis.com/hithere-devs/React.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/React.svg',
         },
     ],
     devops: [
         {
             title: 'Docker',
             image:
-                'https://storage.googleapis.com/hithere-devs/Docker.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Docker.svg',
         },
         {
             title: 'Kubernetes',
             image:
-                'https://storage.googleapis.com/hithere-devs/Kubernetes.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Kubernetes.svg',
         },
         {
             title: 'AWS',
             image:
-                'https://storage.googleapis.com/hithere-devs/AWS.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/AWS.svg',
         },
         {
             title: 'Azure',
             image:
-                'https://storage.googleapis.com/hithere-devs/Azure.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Azure.svg',
         },
         {
             title: 'Google Cloud',
             image:
-                'https://storage.googleapis.com/hithere-devs/GCloud.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/GCloud.svg',
         },
         {
             title: 'Firebase',
             image:
-                'https://storage.googleapis.com/hithere-devs/Firebase.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Firebase.svg',
         },
         {
             title: 'Heroku',
             image:
-                'https://storage.googleapis.com/hithere-devs/Heroku.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Heroku.svg',
         },
         {
             title: 'Netlify',
             image:
-                'https://storage.googleapis.com/hithere-devs/Netlify.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Netlify.svg',
         },
         {
             title: 'Vercel',
             image:
-                'https://storage.googleapis.com/hithere-devs/Vercel.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Vercel.svg',
         },
         {
             title: 'ArgoCD',
             image:
-                'https://storage.googleapis.com/hithere-devs/ArgoCD.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/ArgoCD.svg',
         },
         {
             title: 'Nginx',
             image:
-                'https://storage.googleapis.com/hithere-devs/Nginx.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Nginx.svg',
         },
         {
             title: 'Apache',
             image:
-                'https://storage.googleapis.com/hithere-devs/Apache.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Apache.svg',
         },
         {
             title: 'Prometheus',
             image:
-                'https://storage.googleapis.com/hithere-devs/Prometheus.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Prometheus.svg',
         },
         {
             title: 'Grafana',
             image:
-                'https://storage.googleapis.com/hithere-devs/Grafana.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Grafana.svg',
         },
         {
             title: 'Datadog',
             image:
-                'https://storage.googleapis.com/hithere-devs/Datadog.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Datadog.svg',
         },
         {
             title: 'Splunk',
             image:
-                'https://storage.googleapis.com/hithere-devs/Splunk.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Splunk.svg',
         },
         {
             title: 'NewRelic',
             image:
-                'https://storage.googleapis.com/hithere-devs/NewRelic.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/New%20Relic.svg',
         },
         {
             title: 'LINUX',
             image:
-                'https://storage.googleapis.com/hithere-devs/Linux.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Linux.svg',
         },
         {
             title: 'Raspberry Pi',
             image:
-                'https://storage.googleapis.com/hithere-devs/RaspberryPi.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Raspberrypi.svg',
         },
     ],
     misc: [
         {
             title: 'Adobe XD',
             image:
-                'https://storage.googleapis.com/hithere-devs/AdobeXD.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/AdobeXD.svg',
         },
         {
             title: 'Canva',
             image:
-                'https://storage.googleapis.com/hithere-devs/Canva.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Canva.svg',
         },
         {
             title: 'Figma',
             image:
-                'https://storage.googleapis.com/hithere-devs/Figma.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Figma.svg',
         },
         {
             title: 'ESLint',
             image:
-                'https://storage.googleapis.com/hithere-devs/ESLint.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/ESLint.svg',
         },
     ],
     lang: [
         {
             title: 'TypeScript',
             image:
-                'https://storage.googleapis.com/hithere-devs/TypeScript.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/TypeScript.svg',
         },
         {
             title: 'JavaScript',
             image:
-                'https://storage.googleapis.com/hithere-devs/JavaScript.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/JavaScript.svg',
         },
         {
             title: 'Go',
             image:
-                'https://storage.googleapis.com/hithere-devs/Go.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Go.svg',
         },
         {
             title: 'Python',
             image:
-                'https://storage.googleapis.com/hithere-devs/Python.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Python.svg',
         },
         {
             title: 'C++',
             image:
-                'https://storage.googleapis.com/hithere-devs/CPP.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/CPP.svg',
         },
         {
             title: 'Java',
             image:
-                'https://storage.googleapis.com/hithere-devs/Java.svg',
+                'https://hithere-devs-public-86edc30b.s3.ap-south-2.amazonaws.com/Java.svg',
         },
 
     ],
