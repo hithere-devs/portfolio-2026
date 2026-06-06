@@ -5,39 +5,39 @@ export const projectsData: ProjectsData = {
         {
             title: 'Hithere Mail',
             description:
-                'Client to read, reply, manage, summarize & send emails with AI features',
+                'A Superhuman-style email client to read, reply, manage, summarize and send mail, with AI features that can run against local LLMs.',
             link: 'https://mail.hitheredevs.com',
-            tag: 'Consultation',
+            tag: 'AI / Product',
         },
         {
             title: 'Doc Assist',
             description:
-                'App to convert your documents into an interactive chat with AI magic',
+                'Turn any document into an interactive chat. Upload, ask questions, and get grounded answers with retrieval-augmented AI.',
             link: 'https://doc-assist.hitheredevs.com',
-            tag: 'Design',
+            tag: 'AI / RAG',
+        },
+        {
+            title: 'Autoflow',
+            description:
+                'A workflow automation platform to build AI pipelines with a drag-and-drop canvas, no glue code required.',
+            link: 'https://github.com/hithere-devs/autoflow',
+            tag: 'AI / Platform',
         },
     ],
     past: [
         {
             title: 'Warmup Tool',
             description:
-                ' A tool to parse and categorize emails from Gmail and Outlook accounts, and respond to them automatically using AI.',
+                'A tool to parse and categorize emails from Gmail and Outlook accounts, then respond to them automatically using AI.',
             link: 'https://github.com/hithere-devs/warmup-tool',
-            tag: 'Development',
+            tag: 'Automation',
         },
         {
             title: 'You Reply',
             description:
-                'AI-powered YouTube comment assistant. Elevate engagement and effortlessly craft compelling responses with AI technology.',
+                'AI-powered YouTube comment assistant that drafts compelling, on-brand replies to boost engagement.',
             link: 'https://github.com/hithere-devs/youreply',
-            tag: 'Development',
-        },
-        {
-            title: 'Autoflow',
-            description:
-                'Create your automated AI workflows with a simple drag and drop interface',
-            link: 'https://github.com/hithere-devs/autoflow',
-            tag: 'Custom Workspace',
+            tag: 'AI',
         },
         {
             title: 'Movie App',

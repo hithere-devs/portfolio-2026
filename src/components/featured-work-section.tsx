@@ -14,9 +14,16 @@ const tabs = [
 	{ id: 'past', label: 'Archive' },
 ];
 
+function getDomain(link: string) {
+	try {
+		return new URL(link).hostname.replace(/^www\./, '');
+	} catch {
+		return link;
+	}
+}
+
 function ProjectCard({ project }: { project: Project }) {
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-	const [isHovered, setIsHovered] = useState(false);
 
 	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
 		const rect = e.currentTarget.getBoundingClientRect();
@@ -30,71 +37,41 @@ function ProjectCard({ project }: { project: Project }) {
 		<Link href={project.link} target='_blank' className='group block h-full'>
 			<div
 				onMouseMove={handleMouseMove}
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
-				className='relative h-full overflow-hidden rounded-3xl bg-secondary/5 border border-white/5 p-8 transition-all duration-500 hover:border-white/10'
+				className='relative h-full overflow-hidden rounded-3xl bg-secondary/5 border border-white/5 p-8 transition-all duration-500 hover:border-brand/30'
 			>
-				{/* Spotlight Effect */}
+				{/* Spotlight Effect (the one ambient effect on these cards) */}
 				<motion.div
 					className='pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100'
 					style={{
-						background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,.06), transparent 40%)`,
+						background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, hsl(var(--brand) / 0.10), transparent 40%)`,
 					}}
 				/>
-
-				{/* SVG Pattern Background */}
-				<div className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none'>
-					<motion.svg
-						className='absolute inset-0 h-full w-full'
-						xmlns='http://www.w3.org/2000/svg'
-						initial={{ scale: 1.1 }}
-						animate={{ scale: isHovered ? 1 : 1.1 }}
-						transition={{ duration: 1, ease: 'easeOut' }}
-					>
-						<defs>
-							<pattern
-								id={`grid-pattern-${project.title.replace(/\s+/g, '-')}`}
-								width='32'
-								height='32'
-								patternUnits='userSpaceOnUse'
-							>
-								<path
-									d='M0 32V.5H32'
-									fill='none'
-									stroke='currentColor'
-									strokeOpacity='0.05'
-								></path>
-							</pattern>
-						</defs>
-						<rect
-							width='100%'
-							height='100%'
-							fill={`url(#grid-pattern-${project.title.replace(/\s+/g, '-')})`}
-						></rect>
-					</motion.svg>
-				</div>
 
 				<div className='relative z-10 flex flex-col gap-6'>
 					<div className='flex justify-between items-start'>
 						<Badge
 							variant='secondary'
-							className='rounded-full bg-white/5 backdrop-blur-md border-white/10'
+							className='font-mono text-xs uppercase tracking-wider rounded-full bg-white/5 backdrop-blur-md border-white/10'
 						>
 							{project.tag}
 						</Badge>
-						<div className='w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:text-black'>
+						<div className='w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-brand group-hover:text-brand-foreground group-hover:border-brand'>
 							<ArrowUpRight className='w-5 h-5 transition-transform duration-500 group-hover:rotate-45' />
 						</div>
 					</div>
 
 					<div>
-						<h3 className='text-2xl md:text-3xl font-bold mb-3 group-hover:text-primary transition-colors'>
+						<h3 className='font-display text-2xl md:text-3xl font-bold mb-3 group-hover:text-brand transition-colors'>
 							{project.title}
 						</h3>
 						<p className='text-muted-foreground text-lg leading-relaxed'>
 							{project.description}
 						</p>
 					</div>
+
+					<span className='font-mono text-xs text-muted-foreground/60 tracking-wide mt-auto'>
+						{getDomain(project.link)}
+					</span>
 				</div>
 			</div>
 		</Link>
@@ -119,9 +96,9 @@ export default function FeaturedWorkSection() {
 						viewport={{ once: true }}
 						className='space-y-6'
 					>
-						<h2 className='text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]'>
+						<h2 className='font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.9]'>
 							FEATURED <br />{' '}
-							<span className='text-muted-foreground'>WORK</span>
+							<span className='text-brand'>WORK</span>
 						</h2>
 						<p className='text-xl text-muted-foreground max-w-md'>
 							A curated selection of projects ranging from AI-powered tools to
@@ -142,7 +119,7 @@ export default function FeaturedWorkSection() {
 								key={tab.id}
 								onClick={() => setActiveTab(tab.id)}
 								className={cn(
-									'relative px-6 py-3 rounded-full text-sm font-medium transition-colors duration-300 outline-none',
+									'relative px-6 py-3 rounded-full font-mono text-xs uppercase tracking-wider font-medium transition-colors duration-300 outline-none',
 									activeTab === tab.id
 										? 'text-foreground'
 										: 'text-muted-foreground hover:text-foreground'

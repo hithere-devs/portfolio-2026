@@ -55,17 +55,19 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 	const imageScale = useTransform(scrollYProgress, [0, 0.3], [1, 1.1]);
 
 	// Image Filter Animation (Glow up on scroll)
+	// Base state is already legible at scroll 0 so the portrait reads instantly;
+	// the scroll only adds the final pop of color and brightness.
 	const imageFilter = useTransform(
 		scrollYProgress,
-		[0.15, 0.3],
-		['brightness(0.2) grayscale(100%)', 'brightness(1) grayscale(0%)']
+		[0, 0.3],
+		['brightness(0.62) grayscale(55%)', 'brightness(1) grayscale(0%)']
 	);
 
 	return (
 		<div
 			ref={containerRef}
 			id='about'
-			className={`relative h-[400vh] ${className}`}
+			className={`relative h-[300vh] ${className}`}
 		>
 			<div className='sticky top-0 h-screen w-full flex flex-col items-center justify-center pt-24 pb-12' style={{ overflow: 'clip' }}>
 				{/* --- HERO STATE CONTENT - BACK LAYER (Fades Out) --- */}
@@ -75,14 +77,14 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 				>
 					{/* Top Label */}
 					<div className='absolute top-24 md:top-32 animate-in fade-in slide-in-from-top-8 duration-1000 delay-100'>
-						<span className='text-sm md:text-base font-semibold tracking-[0.3em] text-muted-foreground uppercase'>
+						<span className='font-mono text-xs md:text-sm font-medium tracking-[0.3em] text-muted-foreground uppercase'>
 							Hi there, I&apos;m Azhar
 						</span>
 					</div>
 
 					{/* Big Text Layer - Behind */}
 					<div className='absolute z-0 w-full flex top-40 md:top-52 justify-center items-center select-none'>
-						<h1 className='text-[15vw] md:text-[13vw] font-black tracking-tighter text-foreground/10 leading-[0.8] animate-in fade-in zoom-in-50 duration-1000'>
+						<h1 className='font-display text-[15vw] md:text-[13vw] font-extrabold tracking-tighter text-foreground/10 leading-[0.8] animate-in fade-in zoom-in-50 duration-1000'>
 							FULL STACK
 						</h1>
 					</div>
@@ -95,7 +97,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 				>
 					{/* Big Text Layer - Front */}
 					<div className='absolute z-20 bottom-0 w-full flex justify-center items-center select-none'>
-						<h1 className='text-[15vw] md:text-[13vw] font-black tracking-tighter text-foreground leading-[0.8] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300'>
+						<h1 className='font-display text-[15vw] md:text-[13vw] font-extrabold tracking-tighter text-foreground leading-[0.8] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300'>
 							DEVELOPER
 						</h1>
 					</div>
@@ -159,7 +161,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 						className='absolute -bottom-8 -right-4 md:-bottom-12 md:-right-16 z-30 animate-in fade-in zoom-in-50 duration-1000 delay-1000'
 					>
 						<Link href='#projects' className='group flex flex-col items-center gap-2'>
-							<span className='text-[9px] md:text-[10px] font-semibold tracking-[0.3em] text-muted-foreground/40 uppercase'>Scroll</span>
+							<span className='font-mono text-[9px] md:text-[10px] font-medium tracking-[0.3em] text-muted-foreground/40 uppercase'>Scroll</span>
 							<motion.div
 								animate={{ y: [0, 6, 0] }}
 								transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
@@ -223,9 +225,9 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 				>
 					{/* Text Content - Below image on mobile, left on desktop */}
 					<div className='absolute left-6 right-6 bottom-8 md:bottom-auto md:left-24 md:right-auto md:top-1/2 md:-translate-y-1/2 max-w-[280px] md:max-w-md pointer-events-auto'>
-						<p className='text-2xl md:text-5xl font-bold leading-tight text-foreground/80 hover:text-foreground transition-colors duration-500 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] cursor-default tracking-tight'>
+						<p className='font-display text-2xl md:text-5xl font-bold leading-tight text-foreground/80 hover:text-foreground transition-colors duration-500 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] cursor-default tracking-tight'>
 							Currently Building <br />
-							<span className='text-purple-400'>
+							<span className='text-brand'>
 								Voice AI Agents
 							</span>
 							<br /> <a href='https://samora.ai' target='_blank' rel='noopener noreferrer' className='text-2xl' data-image-hover>@ Samora AI (YC W26)</a>
@@ -286,25 +288,24 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 							className='absolute bottom-0 -left-6 md:-bottom-20 md:-left-20 group hover:z-50 hidden md:flex'
 							data-magnetic
 						>
-							<div className='w-24 h-24 md:w-36 md:h-36 rounded-full bg-primary/10 backdrop-blur-md border border-primary/30 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(var(--primary),0.2)] transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/20 hover:border-primary/50'>
+							<div className='w-24 h-24 md:w-36 md:h-36 rounded-full bg-brand/10 backdrop-blur-md border border-brand/30 flex flex-col items-center justify-center shadow-[0_0_30px_hsl(var(--brand)/0.2)] transition-all duration-500 group-hover:scale-110 group-hover:bg-brand/20 hover:border-brand/50'>
 								<div className='flex flex-col items-center leading-none z-10'>
-									<span className='text-xs md:text-sm font-bold text-primary uppercase tracking-wider'>
+									<span className='font-mono text-[10px] md:text-xs font-semibold text-brand uppercase tracking-wider'>
 										See
 									</span>
-									<span className='text-xs md:text-sm font-bold text-primary uppercase tracking-wider'>
+									<span className='font-mono text-[10px] md:text-xs font-semibold text-brand uppercase tracking-wider'>
 										Works
 									</span>
 								</div>
-								<ArrowUpRight className='w-5 h-5 md:w-6 md:h-6 text-primary mt-1 transition-transform duration-500 group-hover:rotate-45 z-10' />
+								<ArrowUpRight className='w-5 h-5 md:w-6 md:h-6 text-brand mt-1 transition-transform duration-500 group-hover:rotate-45 z-10' />
 							</div>
 						</Link>
 					</div>
 				</motion.div>
 
-				{/* Background Blobs & SVG Patterns (Persistent) */}
+				{/* Single ambient brand glow behind the portrait (the one signature effect) */}
 				<div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none'>
-					<div className='absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl mix-blend-screen animate-blob' />
-					<div className='absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-3xl mix-blend-screen animate-blob animation-delay-2000' />
+					<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[720px] max-h-[720px] bg-brand/10 rounded-full blur-[140px]' />
 				</div>
 			</div>
 		</div>

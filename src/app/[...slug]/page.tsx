@@ -1,8 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import banner from './banner.png';
-import oiaBanner from './banners/oia-banner.png';
 import Nav from '@/components/nav';
 import Footer from '@/components/footer';
 import Reachinbox from './pages/reachinbox';
@@ -33,12 +31,12 @@ const Page = () => {
 		<main className='flex flex-col min-h-screen bg-background selection:bg-primary/20'>
 			<Nav />
 			<div className='flex-grow w-full'>
-				{curPage === 'samora-ai' && <SamoraAI icon='🤖' banner={banner} />}
-				{curPage === 'reachinbox' && <Reachinbox icon='🚀' banner={banner} />}
-				{curPage === 'openinapp' && <Openinapp icon='🏋🏻‍♂️' banner={oiaBanner} />}
-				{curPage === 'jarviot' && <Jarviot icon='🎨' banner={banner} />}
-				{curPage === 'caresy' && <Caresy icon='🧐' banner={banner} />}
-				{curPage === 'saddweb' && <Saddweb icon='💰' banner={banner} />}
+				{curPage === 'samora-ai' && <SamoraAI />}
+				{curPage === 'reachinbox' && <Reachinbox />}
+				{curPage === 'openinapp' && <Openinapp />}
+				{curPage === 'jarviot' && <Jarviot />}
+				{curPage === 'caresy' && <Caresy />}
+				{curPage === 'saddweb' && <Saddweb />}
 			</div>
 			<Footer />
 		</main>

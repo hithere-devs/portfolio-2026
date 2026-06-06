@@ -18,12 +18,6 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from '@/components/ui/tooltip';
 
 const skillSections = [
 	{ title: 'Top Skills', key: 'top', icon: RocketIcon },
@@ -55,9 +49,9 @@ export default function SkillsSection() {
 						{/* Left Side - Sticky Header & Tabs */}
 						<div className='lg:col-span-5 flex flex-col gap-8'>
 							<div className='space-y-6'>
-								<h2 className='text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]'>
+								<h2 className='font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.9]'>
 									TECHNICAL <br />{' '}
-									<span className='text-muted-foreground'>SKILLS</span>
+									<span className='text-brand'>SKILLS</span>
 								</h2>
 								<p className='text-xl text-muted-foreground max-w-md'>
 									Technologies and tools I use to build scalable,
@@ -72,7 +66,7 @@ export default function SkillsSection() {
 										key={section.key}
 										onClick={() => setActiveTab(section.key)}
 										className={cn(
-											'relative px-6 py-3 rounded-full text-sm font-medium transition-colors duration-300 outline-none flex items-center gap-2',
+											'relative px-6 py-3 rounded-full font-mono text-xs uppercase tracking-wider font-medium transition-colors duration-300 outline-none flex items-center gap-2',
 											activeTab === section.key
 												? 'text-foreground'
 												: 'text-muted-foreground hover:text-foreground'
@@ -117,25 +111,19 @@ export default function SkillsSection() {
 												exit={{ opacity: 0, scale: 0.8 }}
 												transition={{ duration: 0.3, delay: index * 0.05 }}
 											>
-												<TooltipProvider>
-													<Tooltip>
-														<TooltipTrigger asChild>
-															<div className='w-[200px] h-[200px] flex items-center justify-center p-6 rounded-3xl bg-secondary/5 border border-white/5 backdrop-blur-sm hover:bg-secondary/10 hover:border-white/10 transition-all duration-300 group'>
-																<div className='relative w-28 h-28 transition-transform duration-500 group-hover:scale-110'>
-																	<Image
-																		src={skill.image}
-																		alt={skill.title}
-																		fill
-																		className='object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]'
-																	/>
-																</div>
-															</div>
-														</TooltipTrigger>
-														<TooltipContent>
-															<p>{skill.title}</p>
-														</TooltipContent>
-													</Tooltip>
-												</TooltipProvider>
+												<div className='w-[200px] h-[200px] flex flex-col items-center justify-center gap-4 p-6 rounded-3xl bg-secondary/5 border border-white/5 backdrop-blur-sm hover:bg-secondary/10 hover:border-brand/20 transition-all duration-300 group'>
+													<div className='relative w-24 h-24 transition-transform duration-500 group-hover:scale-110'>
+														<Image
+															src={skill.image}
+															alt={skill.title}
+															fill
+															className='object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300'
+														/>
+													</div>
+													<span className='font-mono text-xs text-center text-muted-foreground group-hover:text-foreground transition-colors'>
+														{skill.title}
+													</span>
+												</div>
 											</motion.div>
 										)
 									)}

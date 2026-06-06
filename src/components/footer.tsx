@@ -11,8 +11,8 @@ export default function Footer({ className = '' }: FooterProps) {
 			<div className='container mx-auto px-6 py-12'>
 				<div className='flex flex-col md:flex-row justify-between items-center gap-6'>
 					<div className='flex flex-col items-center md:items-start gap-2'>
-						<p className='text-lg font-bold tracking-tight'>
-							hit here<span className='text-primary'> devs</span>
+						<p className='font-display text-lg font-bold tracking-tight'>
+							hit here<span className='text-brand'> devs</span>
 						</p>
 						<p className='text-sm text-muted-foreground'>
 							Building digital experiences that matter.
@@ -26,7 +26,7 @@ export default function Footer({ className = '' }: FooterProps) {
 								variant='ghost'
 								size='icon'
 								asChild
-								className='h-9 w-9 rounded-full hover:bg-primary/10 hover:text-primary transition-colors'
+								className='h-9 w-9 rounded-full hover:bg-brand/10 hover:text-brand transition-colors'
 							>
 								<Link
 									href={social.url}

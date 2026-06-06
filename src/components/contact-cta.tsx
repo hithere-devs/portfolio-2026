@@ -17,9 +17,9 @@ export default function ContactCTA() {
 					viewport={{ once: true }}
 					className='max-w-4xl mx-auto text-center space-y-8'
 				>
-					<h2 className='text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]'>
+					<h2 className='font-display text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.9]'>
 						Ready to bring <br />
-						<span className='text-primary'>
+						<span className='text-brand'>
 							your ideas to life?
 						</span>
 					</h2>
@@ -34,7 +34,7 @@ export default function ContactCTA() {
 					<div className='flex flex-col sm:flex-row items-center justify-center gap-4 pt-4'>
 						<Button
 							size='lg'
-							className='h-14 px-8 text-lg rounded-full group'
+							className='h-14 px-8 text-lg rounded-full group bg-brand text-brand-foreground hover:bg-brand/90'
 							asChild
 						>
 							<Link href={CONTACT_INFO.calendly} target='_blank'>

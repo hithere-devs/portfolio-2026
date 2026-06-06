@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function CustomCursor() {
+	const [enabled, setEnabled] = useState(false);
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 	const [cursorState, setCursorState] = useState<
 		'default' | 'button' | 'image'
@@ -16,7 +17,18 @@ export default function CustomCursor() {
 		radius: string;
 	} | null>(null);
 
+	// Only enable the custom cursor on devices that have a fine pointer and
+	// real hover (desktop). Touch / coarse-pointer devices keep the native cursor.
 	useEffect(() => {
+		const mq = window.matchMedia('(hover: hover) and (pointer: fine)');
+		const apply = () => setEnabled(mq.matches);
+		apply();
+		mq.addEventListener('change', apply);
+		return () => mq.removeEventListener('change', apply);
+	}, []);
+
+	useEffect(() => {
+		if (!enabled) return;
 		const updateMousePosition = (e: MouseEvent) => {
 			setMousePosition({ x: e.clientX, y: e.clientY });
 		};
@@ -60,7 +72,7 @@ export default function CustomCursor() {
 			window.removeEventListener('mouseover', handleMouseOver);
 			window.removeEventListener('scroll', handleScroll);
 		};
-	}, []);
+	}, [enabled]);
 
 	const buttonSize = buttonRect
 		? Math.max(buttonRect.width, buttonRect.height) + 24
@@ -93,18 +105,20 @@ export default function CustomCursor() {
 		},
 	};
 
+	if (!enabled) return null;
+
 	return (
 		<>
 			<style jsx global>{`
-				body {
-					cursor: none;
-				}
-				a,
-				button,
-				input,
-				textarea,
-				select {
-					cursor: none;
+				@media (hover: hover) and (pointer: fine) {
+					body,
+					a,
+					button,
+					input,
+					textarea,
+					select {
+						cursor: none;
+					}
 				}
 			`}</style>
 			<motion.div

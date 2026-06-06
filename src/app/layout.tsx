@@ -1,10 +1,20 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Bricolage_Grotesque, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import CustomCursor from '@/components/ui/custom-cursor';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const bricolage = Bricolage_Grotesque({
+	subsets: ['latin'],
+	variable: '--font-sans',
+	display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+	subsets: ['latin'],
+	variable: '--font-mono',
+	display: 'swap',
+});
 
 export const metadata: Metadata = {
 	title: 'Azhar Mahmood | Full Stack Developer',
@@ -45,7 +55,11 @@ export default function RootLayout({
 	return (
 		<html lang='en' className='dark'>
 			<body
-				className={cn('min-h-screen font-sans antialiased', inter.variable)}
+				className={cn(
+					'min-h-screen font-sans antialiased',
+					bricolage.variable,
+					jetbrainsMono.variable
+				)}
 			>
 				<CustomCursor />
 				{children}
